@@ -1,0 +1,33 @@
+@import "archer"
+
+normalize()
+
+body
+  padding 10px
+
+// no-bullet, no-bullets
+.no-bullet-item
+  no-bullet()
+.no-bullet-list
+  no-bullets()
+
+// size
+.square
+  size 100px
+  background #AFF
+.rectangle
+  size 100px 60px
+  background #AAF
+
+// clearfix
+.cf-container
+  width 200px
+  background #FFA
+  padding 0
+  no-bullets()
+  clearfix()
+  li
+    size 50px
+    margin 5px
+    float left
+    background #AFA
