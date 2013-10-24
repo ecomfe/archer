@@ -6,6 +6,7 @@
 @import 'config'
 @import 'function'
 
+
 /**
  * clearfix
  */
@@ -16,6 +17,7 @@ clearfix()
     display: table
   &:after
     clear: both
+
 
 /**
  * size settings
@@ -28,6 +30,7 @@ size()
     width: arguments[0]
     height: arguments[1]
 
+
 /**
  * no bullets
  */
@@ -39,6 +42,7 @@ no-bullets()
   list-style: none
   li
     no-bullet()
+
 
 /**
  * retina image
@@ -55,4 +59,13 @@ retina-image(path, w = auto, h = auto)
     if w in (cover contain) and h == auto
         h = null
     background-size: w h
+
+
+/**
+ * hide text
+ */
+hide-text()
+  color: transparent
+  font: 0/0 a
+  text-shadow: none
 

@@ -63,3 +63,10 @@ Mobile mixin library based on Stylus.
       retina-image: "../img/icon.png" 32px 32px
       size: 32px
 
+#### hide-text()
+
+隐藏文字。
+
+    .icon
+      size: 32px
+      hide-text()
