@@ -3,6 +3,9 @@
 // @file    util.styl
 // @author  firede(firede@firede.us)
 
+@import 'config'
+@import 'function'
+
 /**
  * clearfix
  */
@@ -17,9 +20,9 @@ clearfix()
 /**
  * size settings
  */
-size(size-w, size-h = size-w)
-  width size-w
-  height size-h
+size(w, h = w)
+  width w
+  height h
 
 /**
  * no bullets
@@ -32,3 +35,20 @@ no-bullets()
   list-style none
   li
     no-bullet()
+
+/**
+ * retina image
+ */
+retina-image(path, w = auto, h = auto)
+  background-image: url(path)
+
+  media_string = hidpi()
+
+  @media media_string
+    ext = extname(path)
+    path = pathjoin(dirname(path), basename(path, ext) + default_retina_suffix + ext)
+    background-image: url(path)
+    if w in (cover contain) and h == auto
+        h = null
+    background-size: w h
+

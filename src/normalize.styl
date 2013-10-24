@@ -55,13 +55,14 @@ normalize()
   // 2. Prevent iOS text size adjust after orientation change, without disabling
   //    user zoom.
   html
-    font-family default-base-font-family // 1
+    font-family default_base_font_family // 1
     -ms-text-size-adjust 100% // 2
     -webkit-text-size-adjust 100% // 2
 
   // Remove default margin.
   body
     margin 0
+    font-size 100%
 
 
   /**
@@ -114,14 +115,14 @@ normalize()
   // Address styling not present in IE 8/9.
   mark
     background #ff0
-    color #000
+    color default_text_color
 
   // Correct font family set oddly in Safari 5 and Chrome.
   code,
   kbd,
   pre,
   samp
-    font-family default-code-font-family
+    font-family default_code_font_family
     font-size 1em
 
   // Improve readability of pre-formatted text in all browsers.
