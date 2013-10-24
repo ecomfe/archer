@@ -1,0 +1,33 @@
+// Archer:Util
+// 
+// @file    util.styl
+// @author  firede(firede@firede.us)
+
+/**
+ * clearfix
+ */
+clearfix()
+  &:after,
+  &:before
+    display table
+  &:after
+    clear both
+
+/**
+ * size settings
+ */
+size(size-w, size-h = size-w, unit-type = 'px')
+  width unit(size-w, unit-type)
+  height unit(size-h, unit-type)
+
+/**
+ * no bullets
+ */
+no-bullet()
+  list-style-image none
+  list-style-type none
+  margin-right 0
+no-bullets()
+  list-style none
+  li
+    no-bullet()
