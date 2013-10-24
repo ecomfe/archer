@@ -15,7 +15,7 @@ clearfix()
     content: " "
     display: table
   &:after
-    clear both
+    clear: both
 
 /**
  * size settings
@@ -32,11 +32,11 @@ size()
  * no bullets
  */
 no-bullet()
-  list-style-image none
-  list-style-type none
-  margin-right 0
+  list-style-image: none
+  list-style-type: none
+  margin-right: 0
 no-bullets()
-  list-style none
+  list-style: none
   li
     no-bullet()
 
