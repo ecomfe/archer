@@ -1,0 +1,18 @@
+// Archer:Shortcut
+//
+// @file    shortcut.styl
+// @author  firede(firede@firede.us)
+
+$pos(type, args)
+    position: unquote(type)
+    for arg in args
+        {arg[0]}: arg[1] is a 'unit' ? arg[1] : 0
+
+fixed()
+    $pos('fixed', arguments)
+
+absolute()
+    $pos('absolute', arguments)
+
+relative()
+    $pos('relative', arguments)
