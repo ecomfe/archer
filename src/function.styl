@@ -9,15 +9,15 @@
  * pixel to rem
  */
 px2rem(pixel)
-  unit(pixel / default_font_size, rem)
+    unit(pixel / default_font_size, rem)
 
 /**
  * hidpi
  */
 hidpi(ratio = 1.3)
-  s = 'only screen and (-webkit-min-device-pixel-ratio:' + ratio + '),'
-  s += 'only screen and (min--moz-device-pixel-ratio:' + ratio + '),'
-  s += 'only screen and (-o-min-device-pixel-ratio:' + ratio + '/1),'
-  s += 'only screen and (min-device-pixel-ratio:' + ratio + '),'
-  s += 'only screen and (min-resolution:' + round(unit(ratio*92, dpi)) + '),'
-  s += 'only screen and (min-resolution:' + unit(ratio, dppx) + ')'
+    s = 'only screen and (-webkit-min-device-pixel-ratio:' + ratio + '),'
+    s += 'only screen and (min--moz-device-pixel-ratio:' + ratio + '),'
+    s += 'only screen and (-o-min-device-pixel-ratio:' + ratio + '/1),'
+    s += 'only screen and (min-device-pixel-ratio:' + ratio + '),'
+    s += 'only screen and (min-resolution:' + round(unit(ratio * 92, dpi)) + '),'
+    s += 'only screen and (min-resolution:' + unit(ratio, dppx) + ')'
