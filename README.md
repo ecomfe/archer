@@ -1,6 +1,8 @@
 # archer
 
-Mobile mixin library based on Stylus.
+`Archer` 是一个面向移动端的、基于 `stylus` 的样式工具库。
+
+**TA** 起源于 `est` 项目，专为移动端设计。如有 **桌面端** 需求，请果断出门右转去找好基友 [`est`](http://ecomfe.github.io/est/)。
 
 ## API
 
@@ -21,17 +23,17 @@ Mobile mixin library based on Stylus.
 将值的单位从 `px` 转为 `rem`。
 
     .entry p
-      font-size: px2rem(14)
-      line-height: px2rem(22)
+        font-size: px2rem(14)
+        line-height: px2rem(22)
 
 #### hidpi(ratio = 1.3)
 
 基于 `min-device-pixel-ratio` 生成针对高分辨率模式的 media query，默认值为 `1.3`。
 
     .img
-      media_query = hidpi()
-      @media media_query
-        background-image: url('img@2x.png')
+        media_query = hidpi()
+        @media media_query
+            background-image: url('img@2x.png')
 
 ### Utils
 
@@ -42,31 +44,38 @@ Mobile mixin library based on Stylus.
 建立 BFC 清除元素内部的浮动，使元素获得应有的高度。
 
     .list-container
-      .clearfix()
-      li
-        float: left
+        .clearfix()
+        li
+            float: left
 
 #### size(width, height)
 
 设定元素的尺寸，当参数只写1个时生成正方形。
 
     .square
-      size: 20px
+        size: 20px
     .rect
-      size: 200px 80px
+        size: 200px 80px
 
 #### retina-image(path, width, height)
 
 高清屏图片支持。
 
     .icon
-      retina-image: "../img/icon.png" 32px 32px
-      size: 32px
+        retina-image: "../img/icon.png" 32px 32px
+        size: 32px
 
 #### hide-text()
 
 隐藏文字。
 
     .icon
-      size: 32px
-      hide-text()
+        size: 32px
+        hide-text()
+
+#### ellipsis()
+
+单行溢出文本显示省略号。
+
+    .desc
+        ellipsis()
