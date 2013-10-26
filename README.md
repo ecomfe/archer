@@ -1,8 +1,9 @@
 # archer
 
-`Archer` 是一个面向移动端的、基于 `stylus` 的样式工具库。
+`Archer` 是一个面向 **移动端** 的、基于 `stylus` 的样式工具库。
 
-**TA** 起源于 `est` 项目，专为移动端设计。如有 **桌面端** 需求，请果断出门右转去找好基友 [`est`](http://ecomfe.github.io/est/)。
+`Archer` 起源于 `est` 项目，专注于 **纯移动端** 浏览器的样式展示。
+如有 **桌面端** 需求，请果断出门右转去找 [`est`](http://ecomfe.github.io/est/) 先森。
 
 ## API
 
