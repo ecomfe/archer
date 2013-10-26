@@ -19,5 +19,4 @@ px2rem(pixel)
  */
 hidpi(ratio = default_retina_dppx)
     s = 'only screen and (-webkit-min-device-pixel-ratio:' + ratio + '),'
-    s += 'only screen and (min-resolution:' + round(unit(ratio * 96, dpi)) + '),'
-    s += 'only screen and (min-resolution:' + unit(ratio, dppx) + ')'
+    s += 'only screen and (min-resolution:' + round(unit(ratio * 96, dpi)) + ')'
