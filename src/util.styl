@@ -46,10 +46,10 @@ no-bullets()
 /**
  * retina image
  */
-retina-image(path, w = auto, h = auto)
+retina-image(path, w = auto, h = auto, ratio = default_retina_dppx)
     background-image: url(path)
 
-    media_string = hidpi()
+    media_string = hidpi(ratio)
 
     @media media_string
         ext = extname(path)
