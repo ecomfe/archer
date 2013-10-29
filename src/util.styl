@@ -79,3 +79,19 @@ ellipsis()
     white-space: nowrap
     overflow: hidden
     text-overflow: ellipsis
+
+/**
+ * prefixer
+ * 
+ * It's a simple vendor (unlike nib)
+ * available prefixes: webkit moz o ms spec
+ */
+prefixer(property, args, prefixes)
+    for prefix in $vendor_prefixes
+        if prefix in prefixes
+            if spec == prefix
+                {property}: args
+            else
+                new_property = '-' + prefix + '-' + property
+                {new_property}: args
+

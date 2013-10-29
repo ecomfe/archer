@@ -3,10 +3,10 @@
 // @file    compatibility.styl
 // @author  firede(firede@firede.us)
 
+@import "util"
+
 box-shadow()
-    -webkit-box-shadow: arguments
-    box-shadow: arguments
+    prefixer: "box-shadow", arguments, webkit spec
 
 box-sizing()
-    -webkit-box-sizing: arguments
-    box-sizing: arguments
+    prefixer: "box-sizing", arguments, webkit spec
