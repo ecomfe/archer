@@ -46,18 +46,21 @@ no-bullets()
 /**
  * retina image
  */
-retina-image(path, w = auto, h = auto, ratio = default_retina_dppx)
+retina-image(path, width = auto, height = auto, dppx = $retina_dppx)
     background-image: url(path)
 
-    media_string = hidpi(ratio)
+    media_string = hidpi(dppx)
 
     @media media_string
         ext = extname(path)
-        path = pathjoin(dirname(path), basename(path, ext) + default_retina_suffix + ext)
+        path = pathjoin(
+            dirname(path),
+            basename(path, ext) + $retina_suffix + ext
+        )
         background-image: url(path)
-        if w in (cover contain) and h == auto
-            h = null
-        background-size: w h
+        if width in (cover contain) and height == auto
+            height = null
+        background-size: width height
 
 /**
  * hide text

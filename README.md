@@ -19,15 +19,15 @@
 
 函数主要用于对样式的 `value` 进行处理。
 
-#### px2rem(pixel)
+#### px_to_rem(pixel)
 
 将值的单位从 `px` 转为 `rem`。
 
     .entry p
-        font-size: px2rem(14)
-        line-height: px2rem(22)
+        font-size: px_to_rem(14)
+        line-height: px_to_rem(22)
 
-#### hidpi(ratio = 1.3)
+#### hidpi(dppx = 1.3)
 
 基于 `min-device-pixel-ratio` 生成针对高分辨率模式的 media query，默认值为 `1.3`。
 

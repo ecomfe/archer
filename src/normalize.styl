@@ -6,11 +6,10 @@
 // @see     https://github.com/necolas/normalize.css
 // @todo    remove compatible code for desktop platform
 
+
 normalize()
 
-    /**
-     * HTML5 display definitions
-     */
+    // HTML5 display definitions
 
     // Correct `block` display not defined in IE 8/9.
     // Correct `block` display not defined in Android 2.1, iOS 3.2.
@@ -46,26 +45,24 @@ normalize()
     template
         display: none
 
-    /**
-     * Base
-     */
+    // Base
 
     // 1. Set default font family to sans-serif.
     // 2. Prevent iOS text size adjust after orientation change, without disabling
     //    user zoom.
     html
-        font-family default_base_font_family // 1
+        font-family $base_font_family // 1
         -ms-text-size-adjust: 100% // 2
         -webkit-text-size-adjust: 100% // 2
 
     // Remove default margin.
     body
         margin: 0
-        font-size: 100%
+        color: $text_color
+        font-size: unit($font_size_pixel * (100 / 16), "%")
 
-    /**
-     * Links
-     */
+
+    // Links
 
     // Remove the gray background color from active links in IE 10.
     a
@@ -80,9 +77,8 @@ normalize()
     a:hover
         outline: 0
 
-    /**
-     * Typography
-     */
+
+    // Typography
 
     // Address variable `h1` font-size and margin within `section` and `article`
     // contexts in Firefox 4+, Safari 5, and Chrome.
@@ -112,14 +108,14 @@ normalize()
     // Address styling not present in IE 8/9.
     mark
         background: #ff0
-        color: default_text_color
+        color: $text_color
 
     // Correct font family set oddly in Safari 5 and Chrome.
     code,
     kbd,
     pre,
     samp
-        font-family: default_code_font_family
+        font-family: $code_font_family
         font-size: 1em
 
     // Improve readability of pre-formatted text in all browsers.
@@ -146,9 +142,8 @@ normalize()
     sub
         bottom: -0.25em
 
-    /**
-     * Embedded content
-     */
+
+    // Embedded content
 
     // Remove border when inside `a` element in IE 8/9.
     img
@@ -158,17 +153,15 @@ normalize()
     svg:not(:root)
         overflow: hidden
 
-    /**
-     * Figures
-     */
+
+    // Figures
 
     // Address margin not present in IE 8/9 and Safari 5.
     figure
         margin: 0
 
-    /**
-     * Forms
-     */
+
+    // Forms
 
     // Define consistent border, margin, and padding.
     fieldset
@@ -259,9 +252,8 @@ normalize()
         overflow: auto // 1
         vertical-align: top // 2
 
-    /**
-     * Tables
-     */
+
+    // Tables
 
     // Remove most spacing between table cells.
     table
