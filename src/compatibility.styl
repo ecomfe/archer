@@ -5,8 +5,16 @@
 
 @import "util"
 
+/**
+ * polyfill
+ */
+
 box-shadow()
     prefixer: "box-shadow", arguments, webkit spec
 
 box-sizing()
-    prefixer: "box-sizing", arguments, webkit spec
+    prefixer: "box-sizing", arguments, webkit moz spec
+
+// Currently the user-select property does not appear in any W3C specification.
+user-select()
+    prefixer: "user-select", arguments, webkit moz ms
