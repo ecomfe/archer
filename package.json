@@ -6,7 +6,8 @@
         { "name": "firede", "email": "firede@firede.us" }
     ],
     "dependencies": {
-        "stylus": "~0.38.0"
+        "stylus": "~0.38.0",
+        "autoprefixer": "~0.8"
     },
     "main": "lib/archer.js",
     "license": "MIT",
