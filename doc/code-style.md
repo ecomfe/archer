@@ -1,4 +1,4 @@
-# 代码风格约定
+# 代码风格 [draft]
 
 `stylus` 的语法自由度很高，代码风格很容易差异化。为了团队协作与代码的可读性，请在开发时遵守本约定。
 
@@ -53,38 +53,50 @@ _说明：Mixin 使用中线分隔，是为了与 CSS 风格保持一致，方�
 
 **建议** 在给属性赋值、使用 Mixin 时使用 `:` (冒号) 分隔，但在语句结尾不使用 `;` (分号)，如：
 
-    .box
-        display: block
-        size: 80px 60px
-        box-shadow: 2px 2px 5px #999
+```css
+.box
+    display: block
+    size: 80px 60px
+    box-shadow: 2px 2px 5px #999
+```
 
 ### 使用函数
 
 **建议** 在使用函数时将参数用 `(`, `)` (括号) 包起来，并将参数传入括号内，如：
 
-    font-size: px_to_rem(12px)
-    media_string = high_dpi($retina_dppx)
+```css
+font-size: px_to_rem(12px)
+media_string = hidpi($retina_dppx)
+```
 
 ### 使用 Mixin
 
 **建议** 在使用 Mixin 时不加括号，贴近原生 CSS 风格，如：
 
-    position: left 10px, bottom 5px
+```css
+.box
+    absolute: left 10px, bottom 5px
     size: 20px
+```
+
+不包含参数的 Mixin 在使用时需要添加括号，如：
+
+```css
+.desc
+    ellipsis()
+```
 
 ## 代码风格示例
 
-    $font_size = 16px
+```css
+$font_size = 16px
 
-    px_to_rem(pixel)
-        unit(pixel / $font_size, rem)
+px_to_rem(pixel)
+    unit(pixel / $font_size, rem)
 
-    box-shadow()
-        -webkit-box-shadow: arguments
-        box-shadow: arguments
-
-    .container
-        padding: 10px 20px
-        font-size: px_to_rem(12px)
-        .box
-            box-shadow: 10px 10px 5px #999
+.container
+    padding: 10px 20px
+    font-size: px_to_rem(12px)
+    .box
+        box-shadow: 10px 10px 5px #999
+```
