@@ -79,3 +79,20 @@ ellipsis()
     white-space: nowrap
     overflow: hidden
     text-overflow: ellipsis
+
+/**
+ * position shortcut
+ */
+_pos(type, args)
+    position: unquote(type)
+    for arg in args
+        {arg[0]}: arg[1] is a 'unit' ? arg[1] : 0
+
+fixed()
+    _pos('fixed', arguments)
+
+absolute()
+    _pos('absolute', arguments)
+
+relative()
+    _pos('relative', arguments)
