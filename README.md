@@ -47,7 +47,7 @@ var archer = require( 'archer' );
 在 stylus 中直接引用即可：
 
 ```css
-@import 'stylus'
+@import 'archer'
 
 normalize()
 ```
