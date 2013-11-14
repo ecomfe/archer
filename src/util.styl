@@ -105,3 +105,29 @@ absolute()
 
 relative()
     _pos('relative', arguments)
+
+/**
+ * arrow
+ */
+arrow(arrow_size, arrow_color, direction_pos, arrow_start_pos, arrow_start_offset = 0)
+    opposite_direction_pos = opposite-position(direction_pos)
+    position: relative if @position == null
+    &:after
+        position: absolute
+        size: 0
+        content: ' '
+        pointer-events: none
+        border: solid transparent
+        border-width: (arrow_size / 2)
+        border-{opposite_direction_pos}-color: arrow_color
+        {opposite_direction_pos}: 100%
+        if arrow_start_pos != center
+            {arrow_start_pos}: arrow_start_offset
+        else
+            if direction_pos in (left right)
+                top: 50%
+                margin-top: -@border-width + arrow_start_offset
+            if direction_pos in (top bottom)
+                left: 50%
+                margin-left: -@border-width + arrow_start_offset
+
