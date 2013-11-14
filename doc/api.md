@@ -233,3 +233,46 @@ body {
   top: 0;
 }
 ```
+
+### arrow: size, color, direction, start_position, start_offset
+
+应用于 `position` 为 `relative/absolute/fixed` 的元素，为其生成三角剪头。
+
++ `size`: 箭头大小
++ `color`: 箭头颜色
++ `direction`: 箭头在容器的方位（left|right|top|bottom）
++ `start_position`: 位置起始方向（center|left|right|top|bottom），默认为 `center`
++ `start_offset`: 位置偏移量，默认为 `0`
+
+注：假如 `direction` 为 *纵向*，那么 `start_position` 的值只能是 *横向* 或 `center`，反之亦然。
+
+**source:**
+
+```css
+.arrow-box
+    size: 300px
+    arrow: 30px #CCC top right 20px
+```
+
+**output:**
+
+```css
+.arrow-box {
+  width: 300px;
+  height: 300px;
+  position: relative;
+}
+
+.arrow-box:after {
+  position: absolute;
+  width: 0;
+  height: 0;
+  content: ' ';
+  pointer-events: none;
+  border: solid transparent;
+  border-width: 15px;
+  border-bottom-color: #ccc;
+  bottom: 100%;
+  right: 20px;
+}
+```
