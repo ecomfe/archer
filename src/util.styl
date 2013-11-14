@@ -109,7 +109,7 @@ relative()
 /**
  * arrow
  */
-arrow(arrow_size, arrow_color, direction_pos, arrow_start_pos, arrow_start_offset = 0)
+arrow(arrow_size, arrow_color, direction_pos, arrow_start_pos = center, arrow_start_offset = 0)
     opposite_direction_pos = opposite-position(direction_pos)
     position: relative if @position == null
     &:after
