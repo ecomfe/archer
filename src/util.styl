@@ -75,10 +75,15 @@ hide-text()
 /**
  * ellipsis
  */
-ellipsis()
-    white-space: nowrap
+ellipsis(line = 1)
     overflow: hidden
     text-overflow: ellipsis
+    if line > 1
+        display: -webkit-box
+        -webkit-line-clamp: line
+        -webkit-box-orient: vertical
+    else
+        white-space: nowrap
 
 /**
  * position shortcut
@@ -130,4 +135,3 @@ arrow(arrow_size, arrow_color, direction_pos, arrow_start_pos = center, arrow_st
             if direction_pos in (top bottom)
                 left: 50%
                 margin-left: -@border-width + arrow_start_offset
-
