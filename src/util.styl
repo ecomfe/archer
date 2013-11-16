@@ -78,12 +78,9 @@ hide-text()
 ellipsis(line = 1)
     overflow: hidden
     text-overflow: ellipsis
-    if line > 1
-        display: -webkit-box
-        -webkit-line-clamp: line
-        -webkit-box-orient: vertical
-    else
-        white-space: nowrap
+    display: -webkit-box
+    -webkit-line-clamp: line
+    -webkit-box-orient: vertical
 
 /**
  * position shortcut
