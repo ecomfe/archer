@@ -46,21 +46,21 @@ no-bullets()
 /**
  * retina image
  */
-retina-image(path, width = auto, height = auto, dppx = $retina_dppx)
-    background-image: url(path)
+retina-image(_path, _width = auto, _height = auto, _dppx = $retina_dppx)
+    background-image: url(_path)
 
-    media_string = hidpi(dppx)
+    media_string = hidpi(_dppx)
 
     @media media_string
-        ext = extname(path)
-        path = pathjoin(
-            dirname(path),
-            basename(path, ext) + $retina_suffix + ext
+        ext = extname(_path)
+        _path = pathjoin(
+            dirname(_path),
+            basename(_path, ext) + $retina_suffix + ext
         )
-        background-image: url(path)
-        if width in (cover contain) and height == auto
-            height = null
-        background-size: width height
+        background-image: url(_path)
+        if _width in (cover contain) and _height == auto
+            _height = null
+        background-size: _width _height
 
 /**
  * hide text
@@ -75,29 +75,29 @@ hide-text()
 /**
  * ellipsis
  */
-ellipsis(line = 1)
+ellipsis(_line = 1)
     overflow: hidden
     text-overflow: ellipsis
     display: -webkit-box
-    -webkit-line-clamp: line
+    -webkit-line-clamp: _line
     -webkit-box-orient: vertical
 
 /**
  * position shortcut
  */
-_pos(type, args)
-    pos_attrs = (left right top bottom)
-    position: unquote(type)
-    if args in pos_attrs
+_pos(_type, _args)
+    _pos_attrs = (left right top bottom)
+    position: unquote(_type)
+    if _args in _pos_attrs
         // args like: left
-        {args}: 0
-    else if args[0] in pos_attrs and args[1] is a 'unit'
+        {_args}: 0
+    else if _args[0] in _pos_attrs and _args[1] is a 'unit'
         // args like: left 10px
-        {args[0]}: args[1] is a 'unit' ? args[1] : 0
+        {_args[0]}: _args[1] is a 'unit' ? _args[1] : 0
     else
         // args like: top, right 20px
-        for arg in args
-            {arg[0]}: arg[1] is a 'unit' ? arg[1] : 0
+        for _arg in _args
+            {_arg[0]}: _arg[1] is a 'unit' ? _arg[1] : 0
 
 fixed()
     _pos('fixed', arguments)
@@ -111,8 +111,8 @@ relative()
 /**
  * arrow
  */
-arrow(arrow_size, arrow_color, direction_pos, arrow_start_pos = center, arrow_start_offset = 0)
-    opposite_direction_pos = opposite-position(direction_pos)
+arrow(_size, _color, _direction, _start_position = center, _start_offset = 0)
+    _opposite_direction = opposite-position(_direction)
     position: relative if @position == null
     &:after
         position: absolute
@@ -120,15 +120,15 @@ arrow(arrow_size, arrow_color, direction_pos, arrow_start_pos = center, arrow_st
         content: ' '
         pointer-events: none
         border: solid transparent
-        border-width: (arrow_size / 2)
-        border-{opposite_direction_pos}-color: arrow_color
-        {opposite_direction_pos}: 100%
-        if arrow_start_pos != center
-            {arrow_start_pos}: arrow_start_offset
+        border-width: (_size / 2)
+        border-{_opposite_direction}-color: _color
+        {_opposite_direction}: 100%
+        if _start_position != center
+            {_start_position}: _start_offset
         else
-            if direction_pos in (left right)
+            if _direction in (left right)
                 top: 50%
-                margin-top: -@border-width + arrow_start_offset
-            if direction_pos in (top bottom)
+                margin-top: -@border-width + _start_offset
+            if _direction in (top bottom)
                 left: 50%
-                margin-left: -@border-width + arrow_start_offset
+                margin-left: -@border-width + _start_offset

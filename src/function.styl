@@ -8,8 +8,8 @@
 /**
  * pixel to rem
  */
-px_to_rem(pixel)
-    unit(pixel / $font_size_pixel, rem)
+px_to_rem(_pixel)
+    unit(_pixel / $font_size_pixel, rem)
 
 /**
  * hidpi
@@ -17,6 +17,6 @@ px_to_rem(pixel)
  * @see http://goo.gl/eHTUo6
  * @see http://bjango.com/articles/min-device-pixel-ratio/
  */
-hidpi(dppx = $retina_dppx)
-    s = 'only screen and (-webkit-min-device-pixel-ratio:' + dppx + '),'
-    s += 'only screen and (min-resolution:' + round(unit(dppx * 96, dpi)) + ')'
+hidpi(_dppx = $retina_dppx)
+    _s = 'only screen and (-webkit-min-device-pixel-ratio:' + _dppx + '),'
+    _s += 'only screen and (min-resolution:' + round(unit(_dppx * 96, dpi)) + ')'
