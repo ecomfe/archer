@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <link rel="stylesheet" href="css/animate.css">
+    <title>Archer Animate</title>
+</head>
+<body>
+    <header>Archer Animate</header>
+    <div class="container">
+        <div class="anim-box">bounce</div>
+        <div class="anim-box">bounceIn</div>
+        <div class="anim-box">bounceInDown</div>
+        <div class="anim-box">bounceInLeft</div>
+        <div class="anim-box">bounceInRight</div>
+        <div class="anim-box">bounceInUp</div>
+        <div class="anim-box">bounceOut</div>
+        <div class="anim-box">bounceOutDown</div>
+        <div class="anim-box">bounceOutLeft</div>
+        <div class="anim-box">bounceOutRight</div>
+        <div class="anim-box">bounceOutUp</div>
+        <div class="anim-box">fadeIn</div>
+        <div class="anim-box">fadeInDown</div>
+        <div class="anim-box">fadeInDownBig</div>
+        <div class="anim-box">fadeInLeft</div>
+        <div class="anim-box">fadeInLeftBig</div>
+        <div class="anim-box">fadeInRight</div>
+        <div class="anim-box">fadeInRightBig</div>
+        <div class="anim-box">fadeInUp</div>
+        <div class="anim-box">fadeInUpBig</div>
+    </div>
+    <script>
+    function toggleAnim() {
+        var me = this;
+        var animClass = 'anim-' + this.innerHTML;
+        this.classList.add( animClass );
+        setTimeout(function() {
+            me.classList.remove( animClass );
+        }, 1000);
+    }
+
+    var animBoxes = document.getElementsByClassName( 'anim-box' );
+
+    [].forEach.call(animBoxes, function( animBox ) {
+        animBox.addEventListener( 'click', toggleAnim.bind( animBox ) );
+    });
+    </script>
+</body>
+</html>
