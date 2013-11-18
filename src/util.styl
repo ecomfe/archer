@@ -49,13 +49,12 @@ no-bullets()
 retina-image(_path, _width = auto, _height = auto, _dppx = $retina_dppx)
     background-image: url(_path)
 
-    media_string = hidpi(_dppx)
-
-    @media media_string
-        ext = extname(_path)
+    _media_string = hidpi(_dppx)
+    @media _media_string
+        _ext = extname(_path)
         _path = pathjoin(
             dirname(_path),
-            basename(_path, ext) + $retina_suffix + ext
+            basename(_path, _ext) + $retina_suffix + _ext
         )
         background-image: url(_path)
         if _width in (cover contain) and _height == auto

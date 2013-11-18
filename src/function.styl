@@ -18,5 +18,5 @@ px_to_rem(_pixel)
  * @see http://bjango.com/articles/min-device-pixel-ratio/
  */
 hidpi(_dppx = $retina_dppx)
-    _s = 'only screen and (-webkit-min-device-pixel-ratio:' + _dppx + '),'
-    _s += 'only screen and (min-resolution:' + round(unit(_dppx * 96, dpi)) + ')'
+    _min_resolution = round(unit(_dppx * 96, dpi))
+    return "only screen and (-webkit-min-device-pixel-ratio: " + _dppx + "), only screen and (min-resolution: " + _min_resolution + ")"
