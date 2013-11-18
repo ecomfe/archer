@@ -1,0 +1,220 @@
+_animate_keyframes(_type)
+    // TODO: 单位选项，px or rem
+    if _type == bounce
+        @keyframes _type
+            0%, 20%, 50%, 80%, 100%
+                transform: translateY(0)
+            40%
+                transform: translateY(-30px)
+            60%
+                transform: translateY(-15px)
+
+    if _type == bounceIn
+        @keyframes _type
+            0%
+                opacity: 0
+                transform: scale(.3)
+            50%
+                opacity: 1
+                transform: scale(1.05)
+            70%
+                transform: scale(.9)
+            100%
+                transform: scale(1)
+
+    if _type == bounceInDown
+        @keyframes _type
+            0%
+                opacity: 0
+                transform: translateY(-2000px)
+            60%
+                opacity: 1
+                -webkit-transform: translateY(30px)
+            80%
+                -webkit-transform: translateY(-10px)
+            100%
+                -webkit-transform: translateY(0)
+
+    if _type == bounceInLeft
+        @keyframes _type
+            0%
+                opacity: 0
+                transform: translateX(-2000px)
+            60%
+                opacity: 1
+                -webkit-transform: translateX(30px)
+            80%
+                -webkit-transform: translateX(-10px)
+            100%
+                -webkit-transform: translateX(0)
+
+    if _type == bounceInRight
+        @keyframes _type
+            0%
+                opacity: 0
+                transform: translateX(2000px)
+            60%
+                opacity: 1
+                -webkit-transform: translateX(-30px)
+            80%
+                -webkit-transform: translateX(10px)
+            100%
+                -webkit-transform: translateX(0)
+
+    if _type == bounceInUp
+        @keyframes _type
+            0%
+                opacity: 0
+                transform: translateY(2000px)
+            60%
+                opacity: 1
+                -webkit-transform: translateY(-30px)
+            80%
+                -webkit-transform: translateY(10px)
+            100%
+                -webkit-transform: translateY(0)
+
+    if _type == bounceOut
+        @keyframes _type
+            0%
+                transform: scale(1)
+            25%
+                transform: scale(.95)
+            50%
+                opacity: 1
+                transform: scale(1.1)
+            100%
+                opacity: 0
+                transform: scale(.3)
+
+    if _type == bounceOutDown
+        @keyframes _type
+            0%
+                transform: translateY(0)
+            20%
+                opacity: 1
+                transform: translateY(-20px)
+            100%
+                opacity: 0
+                transform: translateY(2000px)
+
+    if _type == bounceOutLeft
+        @keyframes _type
+            0%
+                transform: translateX(0)
+            20%
+                opacity: 1
+                transform: translateX(20px)
+            100%
+                opacity: 0
+                transform: translateX(-2000px)
+
+    if _type == bounceOutRight
+        @keyframes _type
+            0%
+                transform: translateX(0)
+            20%
+                opacity: 1
+                transform: translateX(-20px)
+            100%
+                opacity: 0
+                transform: translateX(2000px)
+
+    if _type == bounceOutUp
+        @keyframes _type
+            0%
+                transform: translateY(0)
+            20%
+                opacity: 1
+                transform: translateY(20px)
+            100%
+                opacity: 0
+                transform: translateY(-2000px)
+
+    if _type == fadeIn
+        @keyframes _type
+            0%
+                opacity: 0
+            100%
+                opacity: 1
+
+    if _type == fadeInDown
+        @keyframes _type
+            0%
+                opacity: 0
+                transform: translateY(-20px)
+            100%
+                opacity: 1
+                transform: translateY(0)
+
+    if _type == fadeInDownBig
+        @keyframes _type
+            0%
+                opacity: 0
+                transform: translateY(-2000px)
+            100%
+                opacity: 1
+                transform: translateY(0)
+
+    if _type == fadeInLeft
+        @keyframes _type
+            0%
+                opacity: 0
+                transform: translateX(-20px)
+            100%
+                opacity: 1
+                transform: translateX(0)
+
+    if _type == fadeInLeftBig
+        @keyframes _type
+            0%
+                opacity: 0
+                transform: translateX(-2000px)
+            100%
+                opacity: 1
+                transform: translateX(0)
+
+    if _type == fadeInRight
+        @keyframes _type
+            0%
+                opacity: 0
+                transform: translateX(20px)
+            100%
+                opacity: 1
+                transform: translateX(0)
+
+    if _type == fadeInRightBig
+        @keyframes _type
+            0%
+                opacity: 0
+                transform: translateX(2000px)
+            100%
+                opacity: 1
+                transform: translateX(0)
+
+    if _type == fadeInUp
+        @keyframes _type
+            0%
+                opacity: 0
+                transform: translateY(20px)
+            100%
+                opacity: 1
+                transform: translateY(0)
+
+    if _type == fadeInUpBig
+        @keyframes _type
+            0%
+                opacity: 0
+                transform: translateY(2000px)
+            100%
+                opacity: 1
+                transform: translateY(0)
+
+
+
+animate(_class_name, _type, _duration, _fill_mode)
+    .{_class_name}
+        animation-name: _type
+        animation-duration: _duration
+        animation-fill-mode: _fill_mode
+    _animate_keyframes(_type)
