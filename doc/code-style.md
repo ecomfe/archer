@@ -12,9 +12,9 @@
 
 _说明：全局变量主要用于 **配置项**，增加 `$` 前缀易于区分。_
 
-**局部变量** 字母全小写，多个单词之间用 `_` (下划线) 分隔，如：
+**局部变量** 字母全小写，变量名用 `_` 开头，多个单词之间用 `_` (下划线) 分隔，如：
 
-    retina_dppx
+    _retina_dppx
 
 _说明：局部变量以使用方便为准则，使用下划线分隔增加与 `CSS` 原生语法的区分度。_
 
@@ -91,8 +91,8 @@ media_string = hidpi($retina_dppx)
 ```css
 $font_size = 16px
 
-px_to_rem(pixel)
-    unit(pixel / $font_size, rem)
+px_to_rem(_pixel)
+    unit(_pixel / $font_size, rem)
 
 .container
     padding: 10px 20px
