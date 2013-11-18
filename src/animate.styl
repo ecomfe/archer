@@ -289,6 +289,12 @@ _animate_keyframes(_type)
                 opacity: 0
                 transform: translateY(-2000px)
 
+    if _type == flash
+        @keyframes _type
+            0%, 50%, 100%
+                opacity: 1
+            25%, 75%
+                opacity: 0
 
 animate(_class_name, _type, _duration, _fill_mode)
     .{_class_name}
