@@ -210,6 +210,84 @@ _animate_keyframes(_type)
                 opacity: 1
                 transform: translateY(0)
 
+    if _type == fadeOut
+        @keyframes _type
+            0%
+                opacity: 1
+            100%
+                opacity: 0
+
+    if _type == fadeOutDown
+        @keyframes _type
+            0%
+                opacity: 1
+                transform: translateY(0)
+            100%
+                opacity: 0
+                transform: translateY(20px)
+
+    if _type == fadeOutDownBig
+        @keyframes _type
+            0%
+                opacity: 1
+                transform: translateY(0)
+            100%
+                opacity: 0
+                transform: translateY(2000px)
+
+    if _type == fadeOutLeft
+        @keyframes _type
+            0%
+                opacity: 1
+                transform: translateX(0)
+            100%
+                opacity: 0
+                transform: translateX(-20px)
+
+    if _type == fadeOutLeftBig
+        @keyframes _type
+            0%
+                opacity: 1
+                transform: translateX(0)
+            100%
+                opacity: 0
+                transform: translateX(-2000px)
+
+    if _type == fadeOutRight
+        @keyframes _type
+            0%
+                opacity: 1
+                transform: translateX(0)
+            100%
+                opacity: 0
+                transform: translateX(20px)
+
+    if _type == fadeOutRightBig
+        @keyframes _type
+            0%
+                opacity: 1
+                transform: translateX(0)
+            100%
+                opacity: 0
+                transform: translateX(2000px)
+
+    if _type == fadeOutUp
+        @keyframes _type
+            0%
+                opacity: 1
+                transform: translateY(0)
+            100%
+                opacity: 0
+                transform: translateY(-20px)
+
+    if _type == fadeOutUpBig
+        @keyframes _type
+            0%
+                opacity: 1
+                transform: translateY(0)
+            100%
+                opacity: 0
+                transform: translateY(-2000px)
 
 
 animate(_class_name, _type, _duration, _fill_mode)
