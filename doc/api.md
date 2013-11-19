@@ -276,3 +276,81 @@ body {
   right: 20px;
 }
 ```
+
+## Animate
+
+### animate(selector, type, duration, fill_mode)
+
+生成动画。
+
++ `selector`: 需要生成动画元素的selector
++ `type`: 动画类型，如 `tada`、`bounce` 等
++ `duration`: 动画完成一个周期需要的时间，同 `animation-duration`
++ `fill_mode`: 规定对象动画时间之外的状态，同 `animation-fill-mode`
+
+目前 `animate` 支持的类型有：
+
+    bounce, bounceIn, bounceInDown, bounceInLeft, bounceInRight, bounceInUp,
+    bounceOut, bounceOutDown, bounceOutLeft, bounceOutRight, bounceOutUp,
+    fadeIn, fadeInDown, fadeInDownBig, fadeInLeft, fadeInLeftBig, fadeInRight,
+    fadeInRightBig, fadeInUp, fadeInUpBig, fadeOut, fadeOutDown, fadeOutDownBig,
+    fadeOutLeft, fadeOutLeftBig, fadeOutRight, fadeOutRightBig, fadeOutUp,
+    fadeOutUpBig, flash, flip, flipInX, flipInY, flipOutX, flipOutY, hinge,
+    lightSpeedIn, lightSpeedOut, pulse, rollIn, rollOut, rotateIn,
+    rotateInDownLeft, rotateInDownRight, rotateInUpLeft, rotateInUpRight,
+    rotateOut, rotateOutDownLeft, rotateOutDownRight, rotateOutUpLeft,
+    rotateOutUpRight, shake, slideInDown, slideInLeft, slideInRight,
+    slideOutLeft, slideOutRight, slideOutUp, swing, tada, wobble
+
+**source:**
+
+```css
+animate(".anim-bounce", bounce, 0.5s, both)
+```
+
+**output:**
+
+```css
+.anim-bounce {
+  -webkit-animation-name: bounce;
+  animation-name: bounce;
+  -webkit-animation-duration: 0.5s;
+  animation-duration: 0.5s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+@-webkit-keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+  40% {
+    -webkit-transform: translateY(-30px);
+    transform: translateY(-30px);
+  }
+
+  60% {
+    -webkit-transform: translateY(-15px);
+    transform: translateY(-15px);
+  }
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    -webkit-transform: translateY(0);
+    transform: translateY(0);
+  }
+
+  40% {
+    -webkit-transform: translateY(-30px);
+    transform: translateY(-30px);
+  }
+
+  60% {
+    -webkit-transform: translateY(-15px);
+    transform: translateY(-15px);
+  }
+}
+```
