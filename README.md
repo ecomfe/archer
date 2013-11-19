@@ -59,5 +59,9 @@ normalize()
 ## 文档
 
 - [API](doc/api.md)
+    - [Normalize](doc/api.md#normalize)
+    - [Functions](doc/api.md#functions)
+    - [Utils](doc/api.md#utils)
+    - [Animate](doc/api.md#animate)
 - [兼容性](doc/compatibility.md)
 - [代码风格](doc/code-style.md)
