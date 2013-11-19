@@ -1,6 +1,6 @@
 {
     "name": "archer",
-    "version": "0.1.1-beta.2",
+    "version": "0.1.1-beta.3",
     "description": "一个面向移动端的、基于stylus的样式工具库。",
     "maintainers": [
         { "name": "firede", "email": "firede@firede.us" }
