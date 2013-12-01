@@ -1,12 +1,12 @@
 {
     "name": "archer",
-    "version": "0.1.1",
+    "version": "0.2.0-beta.1",
     "description": "一个面向移动端的、基于stylus的样式工具库。",
     "maintainers": [
         { "name": "firede", "email": "firede@firede.us" }
     ],
     "dependencies": {
-        "stylus": "~0.38.0",
+        "stylus": "~0.41.0",
         "autoprefixer": "~0.8"
     },
     "main": "lib/archer.js",
