@@ -1,0 +1,43 @@
+// position
+// 
+// @author  firede(firede@firede.us)
+// @desc    shorthand properties support, based by `clockhand-stylus`
+// @see     https://github.com/jasonkuhrt/clockhand-stylus
+
+_clockhand_values_patterns_lookup = ((0 0 0 0) (0 1 0 1) (0 1 2 1) (0 1 2 3))
+
+clockhand(_values, _property_name = '', _sides = (top right bottom right))
+    if typeof(_property_name) isnt 'string'
+        error('_property_name must be a string, but got ' + _property_name + ' as a ' + type-of(_property_name))
+
+    _property_name = unquote(_property_name + '-') if _property_name
+    _values_pattern = _clockhand_values_patterns_lookup[length(_values) - 1]
+
+    for i in 0..3
+        _value = _values[_values_pattern[i]]
+        _side = _sides[i]
+        {_property_name}{_side}: _value if _value isnt _
+
+absolute()
+    position: absolute
+    clockhand(arguments)
+
+fixed()
+    position: fixed
+    clockhand(arguments)
+
+relative()
+    position: relative
+    clockhand(arguments)
+
+padding()
+    if _ in arguments
+        clockhand(arguments, 'padding')
+    else
+        padding arguments
+
+margin()
+    if _ in arguments
+        clockhand(arguments, 'margin')
+    else
+        margin arguments
