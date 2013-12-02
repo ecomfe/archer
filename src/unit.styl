@@ -5,16 +5,18 @@
 
 @import 'setting'
 
+
+// convert to rem unit
 rem(_value)
-    if unit(_value) == "px" || unit(_value) == ""
-        _value = (_value / 16 * 100) / $base_font_size
-    else if unit(_value) == "%"
-        _value = _value / $base_font_size
+    if unit(_value) == "px"
+        _value = round(_value / $base_font_size, 3)
+
     unit(_value, "rem")
 
+
+// convert to px unit
 px(_value)
     if unit(_value) == "rem"
-        _value = _value * $base_font_size * 16 / 100
-    else if unit(_value) == "%"
-        _value = _value / $base_font_size * 16
+        _value = round(_value * $base_font_size, 3)
+
     unit(_value, "px")
