@@ -7,16 +7,17 @@
 
 
 // convert to rem unit
+// default unit is `px`
 rem(_value)
-    if unit(_value) == "px" || unit(_value) == ""
+    if unit(_value) == 'px' || unit(_value) == ''
         _value = round(_value / $base_font_size, 3)
 
-    unit(_value, "rem")
+    unit(_value, 'rem')
 
 
 // convert to px unit
 px(_value)
-    if unit(_value) == "rem"
+    if unit(_value) == 'rem'
         _value = round(_value * $base_font_size, 3)
 
-    unit(_value, "px")
+    unit(_value, 'px')

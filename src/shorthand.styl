@@ -1,7 +1,7 @@
-// position
+// shorthand
 // 
 // @author  firede(firede@firede.us)
-// @desc    shorthand properties support, based by `clockhand-stylus`
+// @desc    shorthand properties support, based on `clockhand-stylus`
 // @see     https://github.com/jasonkuhrt/clockhand-stylus
 
 _clockhand_values_patterns_lookup = ((0 0 0 0) (0 1 0 1) (0 1 2 1) (0 1 2 3))
@@ -18,23 +18,28 @@ clockhand(_values, _property_name = '', _sides = (top right bottom right))
         _side = _sides[i]
         {_property_name}{_side}: _value if _value isnt _
 
+
 absolute()
     position: absolute
     clockhand(arguments)
+
 
 fixed()
     position: fixed
     clockhand(arguments)
 
+
 relative()
     position: relative
     clockhand(arguments)
+
 
 padding()
     if _ in arguments
         clockhand(arguments, 'padding')
     else
         padding arguments
+
 
 margin()
     if _ in arguments

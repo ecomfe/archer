@@ -1,7 +1,7 @@
 {
     "name": "archer",
     "version": "0.2.0-beta.1",
-    "description": "一个面向移动端的、基于stylus的样式工具库。",
+    "description": "Archer is a CSS library to focus on mobile web, build on top of stylus.",
     "maintainers": [
         { "name": "firede", "email": "firede@firede.us" }
     ],
