@@ -6,12 +6,12 @@
 // off stylus compatibility settings (ex: keyframes), autoprefixer do it.
 vendors = official
 
-// default base font size is 100%(16px), used in `unit` && `normalize`
-$base_font_size ?= 100%
+// please use px unit(100% == 16px), used in `unit` && `normalize`
+$base_font_size ?= 16px
 
-// $text_color := #333
-// $base_font_family := sans-serif
-// $code_font_family := monospace, serif
+// default font family
+$base_font_family ?= sans-serif
+$code_font_family ?= monospace, serif
 
 // default retina settings
 // $retina_dppx := 1.3
