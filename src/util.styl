@@ -82,32 +82,6 @@ ellipsis(_line = 1)
     -webkit-box-orient: vertical
 
 /**
- * position shortcut
- */
-_pos(_type, _args)
-    _pos_attrs = (left right top bottom)
-    position: unquote(_type)
-    if _args in _pos_attrs
-        // args like: left
-        {_args}: 0
-    else if _args[0] in _pos_attrs and _args[1] is a 'unit'
-        // args like: left 10px
-        {_args[0]}: _args[1] is a 'unit' ? _args[1] : 0
-    else
-        // args like: top, right 20px
-        for _arg in _args
-            {_arg[0]}: _arg[1] is a 'unit' ? _arg[1] : 0
-
-fixed()
-    _pos('fixed', arguments)
-
-absolute()
-    _pos('absolute', arguments)
-
-relative()
-    _pos('relative', arguments)
-
-/**
  * arrow
  */
 arrow(_size, _color, _direction, _start_position = center, _start_offset = 0)
