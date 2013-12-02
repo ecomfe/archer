@@ -1,79 +1,45 @@
-// Archer:Util
+// util
 // 
-// @file    util.styl
 // @author  firede(firede@firede.us)
+// @desc    useful css helpers
 
-@import 'config'
-@import 'function'
+@import 'setting'
 
-/**
- * clearfix
- *
- * @see http://h5bp.com/q
- */
+// set width and height quickly
+// default unit is `px`
+size(_values...)
+    if length(_values) == 1
+        _values_unit = unit(_values) == '' ? 'px' : unit(_values)
+
+        width: unit(_values, _values_unit)
+        height: unit(_values, _values_unit)
+    else
+        _width_unit = unit(_values[0]) ? 'px' : unit(_values[0])
+        _height_unit = unit(_values[1]) ? 'px' : unit(_values[1])
+
+        width: unit(_values[0], _width_unit)
+        height: unit(_values[1], _height_unit)
+
+
+// useful in hybrid app
+no-select()
+    user-select: none
+    -webkit-touch-callout: none
+
+
+// clearfix
+// @see http://h5bp.com/q
 clearfix()
     &:after,
     &:before
-        content: " "
+        content: ' '
         display: table
     &:after
         clear: both
 
-/**
- * size settings
- */
-size()
-    if length(arguments) == 1
-        width: arguments[0]
-        height: arguments[0]
-    else
-        width: arguments[0]
-        height: arguments[1]
 
-/**
- * no bullets
- */
-no-bullet()
-    list-style-image: none
-    list-style-type: none
-    margin-right: 0
-
-no-bullets()
-    list-style: none
-    li
-        no-bullet()
-
-/**
- * retina image
- */
-retina-image(_path, _width = auto, _height = auto, _dppx = $retina_dppx)
-    background-image: url(_path)
-
-    _media_string = hidpi(_dppx)
-    @media _media_string
-        _ext = extname(_path)
-        _path = pathjoin(
-            dirname(_path),
-            basename(_path, _ext) + $retina_suffix + _ext
-        )
-        background-image: url(_path)
-        if _width in (cover contain) and _height == auto
-            _height = null
-        background-size: _width _height
-
-/**
- * hide text
- *
- * @see http://goo.gl/EglZN
- */
-hide-text()
-    color: transparent
-    font: 0 / 0 a
-    text-shadow: none
-
-/**
- * ellipsis
- */
+// ellipsis
+// support multi line, webkit only
 ellipsis(_line = 1)
     overflow: hidden
     text-overflow: ellipsis
@@ -81,27 +47,35 @@ ellipsis(_line = 1)
     -webkit-line-clamp: _line
     -webkit-box-orient: vertical
 
-/**
- * arrow
- */
-arrow(_size, _color, _direction, _start_position = center, _start_offset = 0)
-    _opposite_direction = opposite-position(_direction)
-    position: relative if @position == null
-    &:after
-        position: absolute
-        size: 0
-        content: ' '
-        pointer-events: none
-        border: solid transparent
-        border-width: (_size / 2)
-        border-{_opposite_direction}-color: _color
-        {_opposite_direction}: 100%
-        if _start_position != center
-            {_start_position}: _start_offset
-        else
-            if _direction in (left right)
-                top: 50%
-                margin-top: -@border-width + _start_offset
-            if _direction in (top bottom)
-                left: 50%
-                margin-left: -@border-width + _start_offset
+
+// hide text
+// @see http://goo.gl/EglZN
+hide-text()
+    color: transparent
+    font: 0 / 0 a
+    text-shadow: none
+
+// get media query for retina devices
+get-hd-query(_dppx = 1.3)
+    return s('only screen and (-webkit-min-device-pixel-ratio: %s), only screen and (min-resolution: %s)', _dppx, round(unit(_dppx * 96, 'dpi')))
+
+// media query for retina devices
+$hd_query = get-hd-query()
+
+
+// retina background
+// @todo it's draft version
+bg-hd(_path, _width = null, _height = null)
+    background-image: url(_path)
+
+    @media $hd_query
+        _ext = extname(_path)
+        _path = pathjoin(
+            dirname(_path),
+            basename(_path, _ext) + $hd_suffix + _ext
+        )
+        background-image: url(_path)
+        if _width in (cover contain) and _height == null
+            _height = null
+        background-size: _width _height
+
