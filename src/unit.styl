@@ -8,7 +8,7 @@
 
 // convert to rem unit
 rem(_value)
-    if unit(_value) == "px"
+    if unit(_value) == "px" || unit(_value) == ""
         _value = round(_value / $base_font_size, 3)
 
     unit(_value, "rem")
