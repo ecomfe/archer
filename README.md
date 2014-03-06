@@ -1,3 +1,9 @@
+# 提醒
+
+因 `archer` 的名字已被公司其他项目占用，移动端框架改名为 `rider`，请移步这里：
+
+### [https://github.com/ecomfe/rider](https://github.com/ecomfe/rider)
+
 # archer
 
 `Archer` 是一个面向 **移动端** 的、基于 `stylus` 的样式工具库。
